@@ -1,0 +1,11 @@
+@import "variables";
+@import "mixins";     // миксины должны быть подключены до reset
+@import "reset";
+@import "typography";
+@import "layout";
+@import "header";
+@import "hero";
+@import "skills";
+@import "portfolio";
+@import "experience";
+@import "footer";

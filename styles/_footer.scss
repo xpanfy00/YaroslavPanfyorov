@@ -1,0 +1,6 @@
+.footer {
+  margin-top: 48px; border-top: 1px solid var(--border); padding: 32px 0; background: var(--surface);
+  &__inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+}
+.contact-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; flex-wrap: wrap; }
+.footer__links { list-style: none; margin: 8px 0 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap; }

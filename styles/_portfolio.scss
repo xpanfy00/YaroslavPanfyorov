@@ -1,0 +1,20 @@
+.portfolio {
+  padding: 56px 0;
+  &__head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  &__filters { display: flex; gap: 8px; }
+  &__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+}
+.tag { padding: .35rem .6rem; border: 1px solid var(--border); background: var(--surface); border-radius: 999px; cursor: pointer; &--active { border-color: var(--primary); color: var(--primary); } }
+
+.card {
+  display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--border); border-radius: var(--rad); overflow: hidden; box-shadow: var(--shadow); transition: transform .2s, opacity .2s;
+  &--hidden { opacity: .2; }
+  &:hover { transform: translateY(-3px); }
+  &__img { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--surface); }
+  &__body { padding: 14px; }
+  &__title { margin: 0 0 .25rem; font-size: 1.05rem; }
+  &__desc { margin: 0 0 .5rem; color: var(--muted); }
+  &__tags { display: flex; gap: 6px; list-style: none; margin: 0 0 .5rem; padding: 0; flex-wrap: wrap; }
+  &__tag { font-size: .85rem; border: 1px solid var(--border); border-radius: 6px; padding: .15rem .4rem; }
+  &__links { display: flex; gap: 12px; }
+}

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ярослав — Frontend/Верстальщик | Портфолио</title>
+  <meta name="description" content="Личный сайт-портфолио фронтенд-разработчика: навыки, проекты, опыт работы, контакты." />
+
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ярослав — Портфолио" />
+  <meta property="og:description" content="Проекты, опыт и контакты." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="./" />
+  <meta property="og:image" content="./assets/img/og-preview.png" />
+
+  <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
+  <link rel="preload" href="./assets/css/main.css" as="style" />
+  <link rel="stylesheet" href="./assets/css/main.css" />
+  <script defer src="./assets/js/main.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#hero">Перейти к контенту</a>
+
+<header class="header" role="banner">
+  <div class="container header__inner">
+    <a href="#hero" class="header__logo" aria-label="На главную">Yaroslav</a>
+
+    <button class="header__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span class="header__burger-line" aria-hidden="true"></span>
+      <span class="header__burger-line" aria-hidden="true"></span>
+      <span class="header__burger-line" aria-hidden="true"></span>
+    </button>
+
+    <nav id="nav" class="nav" role="navigation" aria-label="Главная навигация">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="#hero">Hero</a></li>
+        <li class="nav__item"><a class="nav__link" href="#skills">Skills</a></li>
+        <li class="nav__item"><a class="nav__link" href="#portfolio">Portfolio</a></li>
+        <li class="nav__item"><a class="nav__link" href="#experience">Work Experience</a></li>
+        <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-pressed="false" title="Переключить тему" data-theme-toggle>
+        <span class="theme-toggle__icon" aria-hidden="true">🌓</span><span class="visually-hidden">Тема</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="main" role="main">
+  <!-- Hero -->
+  <section id="hero" class="hero" aria-labelledby="hero-title">
+    <div class="container hero__inner">
+      <h1 id="hero-title" class="hero__title">Привет! Я — Ярослав.</h1>
+      <p class="hero__subtitle">Фронтенд-разработчик / верстальщик. Делаю быстрые, доступные и аккуратные интерфейсы.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#contact">Связаться</a>
+        <a class="btn btn--ghost" href="./assets/cv/placeholder-cv.pdf" download>Скачать CV</a>
+      </div>
+    </div>
+  </section>
+
+   <!-- Skills -->
+  <section id="skills" class="skills" aria-labelledby="skills-title">
+    <div class="container">
+      <h2 id="skills-title" class="section-title">Skills</h2>
+      <ul class="skills__grid">
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/java.svg" alt="Java" loading="lazy" />
+          <span class="skills__label">Java</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/spring.svg" alt="Spring Boot" loading="lazy" />
+          <span class="skills__label">Spring Boot</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/hibernate.svg" alt="Hibernate / JPA" loading="lazy" />
+          <span class="skills__label">Hibernate / JPA</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/kafka.svg" alt="Kafka" loading="lazy" />
+          <span class="skills__label">Kafka</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/api.svg" alt="REST API" loading="lazy" />
+          <span class="skills__label">REST API</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/postgresql.svg" alt="PostgreSQL" loading="lazy" />
+          <span class="skills__label">PostgreSQL</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/mysql.svg" alt="MySQL" loading="lazy" />
+          <span class="skills__label">MySQL</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/maven.svg" alt="Maven" loading="lazy" />
+          <span class="skills__label">Maven</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/git.svg" alt="Git" loading="lazy" />
+          <span class="skills__label">Git</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/ci-cd.svg" alt="CI/CD" loading="lazy" />
+          <span class="skills__label">CI/CD</span>
+        </li>
+        <li class="skills__item">
+          <img class="skills__icon" src="./assets/img/icons/junit.svg" alt="JUnit" loading="lazy" />
+          <span class="skills__label">JUnit</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
+    <div class="container">
+      <div class="portfolio__head">
+        <h2 id="portfolio-title" class="section-title">Portfolio</h2>
+        <div class="portfolio__filters" role="group" aria-label="Фильтр по тегам">
+          <button class="tag tag--active" data-filter="all" aria-pressed="true">Все</button>
+          <button class="tag" data-filter="landing">Landing</button>
+          <button class="tag" data-filter="ui">UI</button>
+          <button class="tag" data-filter="vanillajs">Vanilla JS</button>
+        </div>
+      </div>
+
+      <ul class="portfolio__grid">
+        <!-- Card 1 -->
+        <li class="card" data-tags="landing ui">
+          <picture>
+            <img class="card__img" src="./assets/img/projects/project-1.jpg" alt="Скриншот проекта Landing One" loading="lazy" />
+          </picture>
+          <div class="card__body">
+            <h3 class="card__title">Landing One</h3>
+            <p class="card__desc">Чистая верстка, адаптив, лёгкие анимации. Lighthouse 95+.</p>
+            <ul class="card__tags">
+              <li class="card__tag">HTML</li><li class="card__tag">SCSS</li><li class="card__tag">BEM</li>
+            </ul>
+            <div class="card__links">
+              <a class="link" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Card 2 -->
+        <li class="card" data-tags="vanillajs ui">
+          <img class="card__img" src="./assets/img/projects/project-2.jpg" alt="Скриншот проекта UI Widgets" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__title">UI Widgets</h3>
+            <p class="card__desc">Набор виджетов на чистом JS: табы, модалки, аккордеоны.</p>
+            <ul class="card__tags">
+              <li class="card__tag">JS</li><li class="card__tag">ARIA</li><li class="card__tag">A11y</li>
+            </ul>
+            <div class="card__links">
+              <a class="link" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Card 3 -->
+        <li class="card" data-tags="landing">
+          <img class="card__img" src="./assets/img/projects/project-3.jpg" alt="Скриншот проекта Promo Site" loading="lazy" />
+          <div class="card__body">
+            <h3 class="card__title">Promo Site</h3>
+            <p class="card__desc">Грид-сетка, ретина-графика, аккуратная типографика.</p>
+            <ul class="card__tags">
+              <li class="card__tag">Grid</li><li class="card__tag">SCSS</li>
+            </ul>
+            <div class="card__links">
+              <a class="link" href="#" target="_blank" rel="noopener">Live</a>
+              <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section id="experience" class="experience" aria-labelledby="experience-title">
+    <div class="container">
+      <h2 id="experience-title" class="section-title">Work Experience</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <div class="timeline__point" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <h3 class="timeline__role">Frontend Developer — Компания N</h3>
+            <p class="timeline__date">2023 — 2025</p>
+            <ul class="timeline__bullets">
+              <li>Сверстал 20+ страниц, внедрил BEM и SCSS-архитектуру.</li>
+              <li>Оптимизировал CSS/JS, +25% к метрикам Lighthouse.</li>
+              <li>Реализовал дизайн-систему из 30+ токенов и компонентов.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline__item">
+          <div class="timeline__point" aria-hidden="true"></div>
+          <div class="timeline__content">
+            <h3 class="timeline__role">HTML/CSS Developer — Студия X</h3>
+            <p class="timeline__date">2021 — 2023</p>
+            <ul class="timeline__bullets">
+              <li>Адаптивная верстка, доступность (WCAG 2.1 AA).</li>
+              <li>Снижение CLS с 0.18 до 0.05, стабильные шрифты.</li>
+              <li>Автоматизация SVG-иконок (спрайт), lazy-loading.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer id="contact" class="footer" role="contentinfo">
+  <div class="container footer__inner">
+    <div class="footer__contacts">
+      <h2 class="visually-hidden">Контакты</h2>
+      <ul class="contact-list">
+        <li><a class="link" href="mailto:hello@example.com">hello@example.com</a></li>
+        <li><a class="link" href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="link" href="https://t.me/yourusername" target="_blank" rel="noopener">Telegram</a></li>
+        <li><a class="link" href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div class="footer__meta">
+      <small>© <span id="year"></span> Yaroslav. Все права защищены.</small>
+      <ul class="footer__links">
+        <li><a class="link" href="#hero">Наверх ↑</a></li>
+        <li><a class="link" href="./assets/docs/privacy.html">Политика</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

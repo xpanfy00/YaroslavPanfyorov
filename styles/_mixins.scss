@@ -1,0 +1,6 @@
+@mixin respond-max($width) {
+  @media (max-width: $width) { @content; }
+}
+@mixin focus-ring {
+  &:focus { outline: 2px dashed var(--primary); outline-offset: 2px; }
+}

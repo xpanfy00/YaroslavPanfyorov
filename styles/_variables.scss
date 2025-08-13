@@ -1,0 +1,22 @@
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #2563eb;
+  --surface: #f8fafc;
+  --border: #e2e8f0;
+  --shadow: 0 2px 20px rgba(2, 6, 23, .06);
+  --rad: 12px;
+  --container: 1100px;
+}
+[data-theme="dark"] {
+  --bg: #0b1020;
+  --text: #e5e7eb;
+  --muted: #a3a3a3;
+  --primary: #60a5fa;
+  --surface: #0f172a;
+  --border: #1f2937;
+  --shadow: 0 2px 20px rgba(0,0,0,.35);
+}
+$bp-desktop: 1200px;
+$bp-tablet: 768px;
