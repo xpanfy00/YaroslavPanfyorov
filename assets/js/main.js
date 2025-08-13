@@ -109,3 +109,64 @@ const rio = new IntersectionObserver(es => {
 },{ threshold: 0.08 });
 revealEls.forEach(el => rio.observe(el));
 
+// ===== Hero: появление при скролле =====
+(() => {
+  const el = document.querySelector('[data-js-scroll-effect]');
+  if (!el) return;
+  const observer = new IntersectionObserver(([entry]) => {
+    entry.target.classList.toggle('is-inview', entry.isIntersecting);
+  }, { threshold: 0.25 });
+  observer.observe(el);
+})();
+
+// ===== Hero: ванильный слайдер значков =====
+(() => {
+  const root = document.querySelector('[data-js-slider]');
+  if (!root) return;
+
+  const track = root.querySelector('[data-js-slider-track]');
+  const prev  = root.querySelector('.hero-slider__button--prev');
+  const next  = root.querySelector('.hero-slider__button--next');
+
+  let offset = 0;
+
+  function stepWidth() {
+    const first = track.firstElementChild;
+    const gap = 8; // тот же gap, что в CSS
+    return (first?.offsetWidth || 80) + gap;
+  }
+
+  function slide(dir = 1) {
+    const first = track.firstElementChild;
+    const last  = track.lastElementChild;
+    const step  = stepWidth();
+
+    offset += dir * step;
+    track.style.transform = `translateX(${-offset}px)`;
+
+    // бесшовная лента
+    if (dir > 0 && offset > step * 2) {
+      track.append(first);
+      offset -= step;
+      track.style.transform = `translateX(${-offset}px)`;
+    } else if (dir < 0 && offset < 0) {
+      track.prepend(last);
+      offset += step;
+      track.style.transform = `translateX(${-offset}px)`;
+    }
+  }
+
+  let timer = setInterval(slide, 1800);
+  root.addEventListener('pointerenter', () => clearInterval(timer));
+  root.addEventListener('pointerleave', () => (timer = setInterval(slide, 1800)));
+
+  prev?.addEventListener('click', () => slide(-1));
+  next?.addEventListener('click', () => slide(1));
+
+  // на всякий случай пересчёт после ресайза
+  window.addEventListener('resize', () => {
+    track.style.transform = 'translateX(0)';
+    offset = 0;
+  });
+})();
+

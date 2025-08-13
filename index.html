@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Ярослав — Frontend/Верстальщик | Портфолио</title>
-  <meta name="description" content="Личный сайт-портфолио фронтенд-разработчика: навыки, проекты, опыт работы, контакты." />
+  <title>Yaroslav Panfyorov Backend developer| Portfolio</title>
+  <meta name="description" content="Site portfolio Yaroslav Panfyorov" />
 
 
   <!-- Open Graph -->
@@ -20,11 +20,19 @@
   <script defer src="./assets/js/main.js"></script>
 </head>
 <body>
-<a class="skip-link" href="#hero">Перейти к контенту</a>
+<a class="skip-link" href="#hero">Move to content</a>
 
 <header class="header" role="banner">
   <div class="container header__inner">
-    <a href="#hero" class="header__logo" aria-label="На главную">Yaroslav</a>
+    <a href="#hero">
+      <svg class="logo__svg" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M45.6001 34.7586C45.6001 33.6157 44.5258 32.6896 43.2001 32.6896H20.8C19.4743 32.6896 18.4 33.6157 18.4 34.7586V51.3103C18.4 51.6909 18.7586 52 19.2 52H44.8001C45.2415 52 45.6001 51.6909 45.6001 51.3103V34.7586ZM32.8412 37.9889L29.6412 46.2647C29.5019 46.6256 29.7283 47.0166 30.1476 47.1372C30.5662 47.2573 31.0198 47.0621 31.1597 46.7007L34.3597 38.4248C34.499 38.064 34.2726 37.6729 33.8533 37.5523C33.4347 37.4322 32.9812 37.6274 32.8412 37.9889ZM27.8658 46.1L24.9619 42.3447L27.8658 38.5895C28.1105 38.2723 28.0115 37.8441 27.6444 37.6328C27.2765 37.4219 26.7797 37.5072 26.5347 37.8237L23.3347 41.9617C23.1554 42.1935 23.1554 42.4955 23.3347 42.7271L26.5347 46.865C26.7794 47.1815 27.2761 47.2671 27.6444 47.0559C28.0115 46.845 28.1108 46.4167 27.8658 46.0993V46.1ZM37.4658 46.8654L40.6658 42.7275C40.8451 42.4956 40.8451 42.1936 40.6658 41.9621L37.4658 37.8241C37.2212 37.5076 36.7244 37.422 36.3562 37.6333C35.989 37.8442 35.8897 38.2724 36.1347 38.5899L39.0387 42.3451L36.1347 46.1004C35.8901 46.4175 35.989 46.8458 36.3562 47.057C36.724 47.2679 37.2208 47.1826 37.4658 46.8661V46.8654Z" fill="white"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M43.2 21.6552C43.2 26.9877 38.1857 31.3103 32 31.3103C25.8143 31.3103 20.8 26.9877 20.8 21.6552C20.8 16.3227 25.8143 12 32 12C38.1857 12 43.2 16.3227 43.2 21.6552Z" fill="white"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8 39.2126C13.8104 42.4657 12 46.692 12 51.3103C12 51.6909 12.3586 52 12.8 52H16.9368C16.8478 51.7842 16.8 51.5523 16.8 51.3103L16.8 39.2126Z" fill="white"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M47.2 39.2126V51.3103C47.2 51.5523 47.1522 51.7842 47.0632 52H51.2C51.6414 52 52 51.6909 52 51.3103C52 46.6918 50.1896 42.4654 47.2 39.2126H47.2Z" fill="white"></path>
+    </svg>
+    </a>
+
 
     <button class="header__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
       <span class="header__burger-line" aria-hidden="true"></span>
@@ -32,16 +40,15 @@
       <span class="header__burger-line" aria-hidden="true"></span>
     </button>
 
-    <nav id="nav" class="nav" role="navigation" aria-label="Главная навигация">
+    <nav id="nav" class="nav" role="navigation" aria-label="Main navigation">
       <ul class="nav__list">
         <li class="nav__item"><a class="nav__link" href="#hero">Hero</a></li>
         <li class="nav__item"><a class="nav__link" href="#skills">Skills</a></li>
-        <li class="nav__item"><a class="nav__link" href="#portfolio">Portfolio</a></li>
         <li class="nav__item"><a class="nav__link" href="#experience">Work Experience</a></li>
         <li class="nav__item"><a class="nav__link" href="#contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" type="button" aria-pressed="false" title="Переключить тему" data-theme-toggle>
-        <span class="theme-toggle__icon" aria-hidden="true">🌓</span><span class="visually-hidden">Тема</span>
+        <span class="theme-toggle__icon" aria-hidden="true">🌓</span><span class="visually-hidden">Topic</span>
       </button>
     </nav>
   </div>
@@ -49,190 +56,253 @@
 
 <main id="main" class="main" role="main">
   <!-- Hero -->
-  <section id="hero" class="hero" aria-labelledby="hero-title">
-    <div class="container hero__inner">
-      <h1 id="hero-title" class="hero__title">Привет! Я — Ярослав.</h1>
-      <p class="hero__subtitle">Фронтенд-разработчик / верстальщик. Делаю быстрые, доступные и аккуратные интерфейсы.</p>
+<section id="hero" class="hero" aria-labelledby="hero-title">
+  <div class="container hero__inner">
+
+    <div class="hero__content">
+      <h1 id="hero-title" class="hero__title">Hello! My name is Yaroslav Panfyorov.</h1>
+      <p class="hero__subtitle">I'm Java Spring Backend Developer</p>
       <div class="hero__cta">
         <a class="btn btn--primary" href="#contact">Связаться</a>
-        <a class="btn btn--ghost" href="./assets/cv/placeholder-cv.pdf" download>Скачать CV</a>
+        <a class="btn btn--ghost" href="assets/pdf/Yaroslav_Panfyorov_CV_.pdf" download>Скачать CV</a>
       </div>
     </div>
-  </section>
 
-   <!-- Skills -->
-  <section id="skills" class="skills" aria-labelledby="skills-title">
-    <div class="container">
-      <h2 id="skills-title" class="section-title">Skills</h2>
-      <ul class="skills__grid">
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/java.svg" alt="Java" loading="lazy" />
-          <span class="skills__label">Java</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/spring.svg" alt="Spring Boot" loading="lazy" />
-          <span class="skills__label">Spring Boot</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/hibernate.svg" alt="Hibernate / JPA" loading="lazy" />
-          <span class="skills__label">Hibernate / JPA</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/kafka.svg" alt="Kafka" loading="lazy" />
-          <span class="skills__label">Kafka</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/api.svg" alt="REST API" loading="lazy" />
-          <span class="skills__label">REST API</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/postgresql.svg" alt="PostgreSQL" loading="lazy" />
-          <span class="skills__label">PostgreSQL</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/mysql.svg" alt="MySQL" loading="lazy" />
-          <span class="skills__label">MySQL</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/maven.svg" alt="Maven" loading="lazy" />
-          <span class="skills__label">Maven</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/git.svg" alt="Git" loading="lazy" />
-          <span class="skills__label">Git</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/ci-cd.svg" alt="CI/CD" loading="lazy" />
-          <span class="skills__label">CI/CD</span>
-        </li>
-        <li class="skills__item">
-          <img class="skills__icon" src="./assets/img/icons/junit.svg" alt="JUnit" loading="lazy" />
-          <span class="skills__label">JUnit</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio" class="portfolio" aria-labelledby="portfolio-title">
-    <div class="container">
-      <div class="portfolio__head">
-        <h2 id="portfolio-title" class="section-title">Portfolio</h2>
-        <div class="portfolio__filters" role="group" aria-label="Фильтр по тегам">
-          <button class="tag tag--active" data-filter="all" aria-pressed="true">Все</button>
-          <button class="tag" data-filter="landing">Landing</button>
-          <button class="tag" data-filter="ui">UI</button>
-          <button class="tag" data-filter="vanillajs">Vanilla JS</button>
-        </div>
+    <!-- 3D scene (без React) -->
+<div class="hero__scene-wrapper" aria-hidden="true">
+  <div class="hero-scene" data-js-scroll-effect>
+    <!-- Laptop -->
+    <div class="laptop-bottom-panel">
+      <div class="laptop-bottom-panel__shadow"></div>
+      <div class="laptop-bottom-panel__base"></div>
+      <div class="laptop-bottom-panel__keyboard">
+        <!-- Клавиши делаем кнопками, но без табфокуса -->
+        <!-- Сгенерировано сокращённо — можно дублировать при желании -->
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
+        <button class="laptop-bottom-panel__key" type="button" tabindex="-1" aria-hidden="true"></button>
       </div>
-
-      <ul class="portfolio__grid">
-        <!-- Card 1 -->
-        <li class="card" data-tags="landing ui">
-          <picture>
-            <img class="card__img" src="./assets/img/projects/project-1.jpg" alt="Скриншот проекта Landing One" loading="lazy" />
-          </picture>
-          <div class="card__body">
-            <h3 class="card__title">Landing One</h3>
-            <p class="card__desc">Чистая верстка, адаптив, лёгкие анимации. Lighthouse 95+.</p>
-            <ul class="card__tags">
-              <li class="card__tag">HTML</li><li class="card__tag">SCSS</li><li class="card__tag">BEM</li>
-            </ul>
-            <div class="card__links">
-              <a class="link" href="#" target="_blank" rel="noopener">Live</a>
-              <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </div>
-        </li>
-
-        <!-- Card 2 -->
-        <li class="card" data-tags="vanillajs ui">
-          <img class="card__img" src="./assets/img/projects/project-2.jpg" alt="Скриншот проекта UI Widgets" loading="lazy" />
-          <div class="card__body">
-            <h3 class="card__title">UI Widgets</h3>
-            <p class="card__desc">Набор виджетов на чистом JS: табы, модалки, аккордеоны.</p>
-            <ul class="card__tags">
-              <li class="card__tag">JS</li><li class="card__tag">ARIA</li><li class="card__tag">A11y</li>
-            </ul>
-            <div class="card__links">
-              <a class="link" href="#" target="_blank" rel="noopener">Live</a>
-              <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </div>
-        </li>
-
-        <!-- Card 3 -->
-        <li class="card" data-tags="landing">
-          <img class="card__img" src="./assets/img/projects/project-3.jpg" alt="Скриншот проекта Promo Site" loading="lazy" />
-          <div class="card__body">
-            <h3 class="card__title">Promo Site</h3>
-            <p class="card__desc">Грид-сетка, ретина-графика, аккуратная типографика.</p>
-            <ul class="card__tags">
-              <li class="card__tag">Grid</li><li class="card__tag">SCSS</li>
-            </ul>
-            <div class="card__links">
-              <a class="link" href="#" target="_blank" rel="noopener">Live</a>
-              <a class="link" href="#" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <div class="laptop-bottom-panel__shine"></div>
     </div>
-  </section>
-
-  <!-- Work Experience -->
-  <section id="experience" class="experience" aria-labelledby="experience-title">
-    <div class="container">
-      <h2 id="experience-title" class="section-title">Work Experience</h2>
-      <ol class="timeline">
-        <li class="timeline__item">
-          <div class="timeline__point" aria-hidden="true"></div>
-          <div class="timeline__content">
-            <h3 class="timeline__role">Frontend Developer — Компания N</h3>
-            <p class="timeline__date">2023 — 2025</p>
-            <ul class="timeline__bullets">
-              <li>Сверстал 20+ страниц, внедрил BEM и SCSS-архитектуру.</li>
-              <li>Оптимизировал CSS/JS, +25% к метрикам Lighthouse.</li>
-              <li>Реализовал дизайн-систему из 30+ токенов и компонентов.</li>
-            </ul>
-          </div>
-        </li>
-        <li class="timeline__item">
-          <div class="timeline__point" aria-hidden="true"></div>
-          <div class="timeline__content">
-            <h3 class="timeline__role">HTML/CSS Developer — Студия X</h3>
-            <p class="timeline__date">2021 — 2023</p>
-            <ul class="timeline__bullets">
-              <li>Адаптивная верстка, доступность (WCAG 2.1 AA).</li>
-              <li>Снижение CLS с 0.18 до 0.05, стабильные шрифты.</li>
-              <li>Автоматизация SVG-иконок (спрайт), lazy-loading.</li>
-            </ul>
-          </div>
-        </li>
-      </ol>
+    <div class="laptop-top-panel">
+      <div class="laptop-top-panel__base"></div>
+      <div class="laptop-top-panel__screen"></div>
+      <div class="laptop-top-panel__shine"></div>
     </div>
-  </section>
-</main>
 
-<footer id="contact" class="footer" role="contentinfo">
-  <div class="container footer__inner">
-    <div class="footer__contacts">
-      <h2 class="visually-hidden">Контакты</h2>
-      <ul class="contact-list">
-        <li><a class="link" href="mailto:hello@example.com">hello@example.com</a></li>
-        <li><a class="link" href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a class="link" href="https://t.me/yourusername" target="_blank" rel="noopener">Telegram</a></li>
-        <li><a class="link" href="https://www.linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a></li>
-      </ul>
+    <!-- UML -->
+    <div class="uml-diagram">
+      <div class="uml-diagram__ellipse uml-diagram__ellipse--top"></div>
+      <div class="uml-diagram__direction-arrow uml-diagram__direction-arrow--top"></div>
+      <div class="uml-diagram__rhombus">&lt;\&gt;</div>
+      <div class="uml-diagram__direction-arrow uml-diagram__direction-arrow--left"></div>
+      <div class="uml-diagram__direction-line uml-diagram__direction-line--top-left"></div>
+      <div class="uml-diagram__direction-line uml-diagram__direction-line--top-right"></div>
+      <div class="uml-diagram__direction-arrow uml-diagram__direction-arrow--right"></div>
+      <div class="uml-diagram__rectangle uml-diagram__rectangle--left"></div>
+      <div class="uml-diagram__rectangle uml-diagram__rectangle--right"></div>
+      <div class="uml-diagram__direction-line uml-diagram__direction-line--bottom"></div>
+      <div class="uml-diagram__direction-arrow uml-diagram__direction-arrow--bottom"></div>
+      <div class="uml-diagram__ellipse uml-diagram__ellipse--bottom"></div>
     </div>
-    <div class="footer__meta">
-      <small>© <span id="year"></span> Yaroslav. Все права защищены.</small>
-      <ul class="footer__links">
-        <li><a class="link" href="#hero">Наверх ↑</a></li>
-        <li><a class="link" href="./assets/docs/privacy.html">Политика</a></li>
+
+    <!-- Плавающие «бейджи» технологий -->
+    <div class="code-signs" aria-hidden="true">
+      <div class="code-signs__sign code-signs__sign--left code-signs__sign--tag">&lt;\&gt;</div>
+      <div class="code-signs__sign code-signs__sign--left code-signs__sign--ts">Java</div>
+      <div class="code-signs__sign code-signs__sign--right code-signs__sign--react">Java</div>
+      <div class="code-signs__sign code-signs__sign--right code-signs__sign--postcss">Java</div>
+      <div class="code-signs__sign code-signs__sign--left code-signs__sign--js">Java</div>
+      <div class="code-signs__sign code-signs__sign--left code-signs__sign--stars">Java</div>
+    </div>
+
+    <!-- Бегущая «код-панель» -->
+    <div class="code-panel" aria-hidden="true">
+      <div class="code-panel__word"></div>
+      <div class="code-panel__word code-panel__word--2"></div>
+      <div class="code-panel__word code-panel__word--bright-color"></div>
+      <div class="code-panel__word code-panel__word--yellow-color"></div>
+    </div>
+
+    <!-- Байт-код -->
+    <div class="byte-code" aria-hidden="true">
+      <span class="byte-code__char">1</span><span class="byte-code__char">0</span><span class="byte-code__char">1</span>
+      <span class="byte-code__char">1</span><span class="byte-code__char">0</span><span class="byte-code__char">0</span>
+      <span class="byte-code__char">1</span><span class="byte-code__char">1</span>
+    </div>
+
+    <!-- Икон-слайдер (ванильный) -->
+    <div class="hero-slider" data-js-slider>
+      <ul class="hero-slider__list" data-js-slider-track>
+        <li class="hero-slider__item">Java</li>
+        <li class="hero-slider__item">Spring</li>
+        <li class="hero-slider__item">Jwt</li>
+        <li class="hero-slider__item">PostgreSql</li>
+        <li class="hero-slider__item">Hibernate</li>
+
       </ul>
     </div>
   </div>
+</div>
+
+  </div>
+</section>
+
+   <!-- Skills -->
+  <section id="skills" class="skills skills--two-cols" aria-labelledby="skills-title">
+  <div class="container">
+    <h2 id="skills-title" class="section-title visually-hidden">Skills</h2>
+
+    <div class="skills__cols">
+      <!-- Hard -->
+      <section aria-labelledby="skills-hard-title" class="skills__col">
+        <h3 id="skills-hard-title" class="skills__title skills__title--hard">Hard <span>skills</span></h3>
+        <ul class="skill-list" role="list">
+          <li class="skill-pill">Java</li>
+          <li class="skill-pill">Spring Boot</li>
+          <li class="skill-pill">Hibernate / JPA</li>
+          <li class="skill-pill">Kafka</li>
+          <li class="skill-pill">REST API</li>
+          <li class="skill-pill">PostgreSQL</li>
+          <li class="skill-pill">MySQL</li>
+          <li class="skill-pill">Maven</li>
+          <li class="skill-pill">Git</li>
+          <li class="skill-pill">CI/CD</li>
+          <li class="skill-pill">JUnit</li>
+        </ul>
+      </section>
+
+      <!-- Soft -->
+      <section aria-labelledby="skills-soft-title" class="skills__col">
+        <h3 id="skills-soft-title" class="skills__title skills__title--soft">Soft <span>skills</span></h3>
+        <ul class="skill-list" role="list">
+          <li class="skill-pill">I know how to work in a team, I have experience in communication with designers, managers and other developers</li>
+          <li class="skill-pill">I am responsible about deadlines</li>
+          <li class="skill-pill">I am attentive to the details of the terms of reference</li>
+          <li class="skill-pill">I am demanding of the quality of my code, I follow the code-style</li>
+          <li class="skill-pill">I have time management skills</li>
+          <li class="skill-pill">I welcome constructive criticism and am always happy to find new points of professional and personal growth</li>
+          <li class="skill-pill">I know how to solve conflict situations</li>
+          <li class="skill-pill">I am correctly convey thoughts, formulate questions</li>
+          <li class="skill-pill">I write detailed reports on the work done, if required</li>
+          <li class="skill-pill">I have experience working with a geographically distributed team (remote work)</li>
+          <li class="skill-pill">I have experience in mentoring, training of junior specialists</li>
+          <li class="skill-pill">I am motivated to improve my skills, constantly studying new technologies in my field of activity</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Work Experience -->
+<section id="experience" class="experience section">
+  <div class="container experience__inner">
+    <h2 class="section-title">Work <span>Experience</span></h2>
+
+    <ol class="timeline">
+      <li class="timeline__item">
+        <article class="exp-card">
+           <time class="work-experience-card__date" datetime="2024-01"> Jan 2024 - May 2025 </time>
+           <h3 class="work-experience-card__title">
+             <a class="work-experience-card__link"  target="_blank" title="Open a new tab"> NLS </a>
+           </h3>
+           <div class="work-experience-card__position" bis_skin_checked="1"> Backend Developer </div>
+           <div class="work-experience-card__description" bis_skin_checked="1">
+             <p>Project: internal CRM system</p>
+             <p>Development and support of the backend of the company's internal tools, automation of development processes.</p>
+           </div>
+           <div class="stack" bis_skin_checked="1">
+             <ul class="stack__list flow">
+               <li class="stack__item">
+                 <img class="stack__image" src="assets/icon/java-svgrepo-com.svg" alt="Java" title="Java" width="36" height="36" loading="lazy">
+               </li>
+               <li class="stack__item">
+                 <img class="stack__image" src="assets/icon/spring-icon-svgrepo-com.svg" alt="spring" title="spring" width="36" height="36" loading="lazy">
+               </li>
+               <li class="stack__item">
+                 <img class="stack__image" src="assets/icon/kafka-icon-svgrepo-com.svg" alt="kafka" title="kafka" width="36" height="36" loading="lazy">
+               </li>
+               <li class="stack__item">
+                 <img class="stack__image" src="assets/icon/postgresql-svgrepo-com.svg" alt="postgresql" title="postgresql" width="36" height="36" loading="lazy">
+               </li>
+               <li class="stack__item">
+                 <img class="stack__image" src="assets/icon/hibernate-svgrepo-com.svg" alt="hibernate" title="hibernate" width="36" height="36" loading="lazy">
+               </li>
+               <li class="stack__item">
+                 <img class="stack__image" src="assets/icon/git-svgrepo-com.svg" alt="git" title="git" width="36" height="36" loading="lazy">
+               </li>
+             </ul>
+           </div>
+        </article>
+      </li>
+      <li class="timeline__item">
+        <article class="exp-card">…</article>
+      </li>
+      <li class="timeline__item">
+        <article class="exp-card">…</article>
+      </li>
+      <!-- ещё элементы -->
+    </ol>
+  </div>
+</section>
+
+
+</main>
+
+<footer id="contact" class="footer" role="contentinfo" >
+  <div class="container">
+    <div class="footer__card">
+      <div class="footer__left">
+        <h2 class="footer__title">
+          Do you want to  <span class="footer__accent">Contact?</span>
+        </h2>
+        <p class="footer__note">
+          Contact me. I am in touch Mon–Fri from 9 am to 4 pm.
+        </p>
+      </div>
+
+      <ul class="footer__socials" aria-label="Social links">
+        <li>
+          <a class="socbtn" href="https://github.com/xpanfy00" target="_blank" rel="noopener" aria-label="GitHub">
+            <!-- GitHub -->
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.76-1.35-1.76-1.1-.75.08-.74.08-.74 1.22.09 1.87 1.26 1.87 1.26 1.08 1.86 2.84 1.32 3.53 1.01.11-.79.42-1.32.76-1.63-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.39 1.24-3.23-.13-.31-.54-1.55.12-3.23 0 0 1.01-.32 3.3 1.23a11.45 11.45 0 0 1 6.01 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.68.25 2.92.12 3.23.77.84 1.24 1.92 1.24 3.23 0 4.61-2.8 5.63-5.47 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.83.58A12 12 0 0 0 12 .5z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="socbtn" href="https://www.linkedin.com/in/yaroslav-panfyorov-017545185/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8.98h5V24H0zM8 8.98h4.79v2.05h.07c.67-1.27 2.3-2.6 4.74-2.6 5.07 0 6 3.33 6 7.67V24h-5v-6.75c0-1.61-.03-3.68-2.25-3.68-2.25 0-2.6 1.76-2.6 3.56V24H8z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="socbtn" href="https://t.me/carter077" target="_blank" rel="noopener" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M9.97 15.45l-.39 5.48c.56 0 .8-.24 1.09-.53l2.62-2.52 5.43 3.97c.99.55 1.69.26 1.96-.92l3.55-16.64h.01c.31-1.44-.52-2-1.48-1.65L1.67 9.55c-1.41.55-1.38 1.34-.24 1.69l5.3 1.65 12.34-7.59c.58-.35 1.11-.16.68.19"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="socbtn" href="mailto:y.panfyorov@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 13L2 6.75V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6.75z"/><path fill="currentColor" d="M22 6l-10 7L2 6l10-4z"/></svg>
+          </a>
+        </li>
+        <li>
+          <a class="socbtn" href="#" aria-label="Blog">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M4 4h16v2H4zm0 7h16v2H4zm0 7h10v2H4z"/></svg>
+          </a>
+        </li>
+      </ul>
+
+      <div class="footer__copy">
+        © <span id="year"></span> <a class="link" href="#" rel="noopener">Yaroslav</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
 </body>
 </html>

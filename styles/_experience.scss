@@ -1,9 +1,270 @@
-.experience { padding: 56px 0; }
+/* ===== Work Experience (timeline) ===== */
+
+.experience {
+  position: relative;
+  padding-block: clamp(40px, 6vw, 72px);
+  overflow: visible; // тени не обрезались
+   padding-inline: 20px;
+}
+
+/* список-таймлайн */
 .timeline {
-  list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--border); padding-left: 18px;
-  &__item { position: relative; margin: 0 0 18px; }
-  &__point { position: absolute; left: -10px; top: .25rem; width: 10px; height: 10px; background: var(--primary); border-radius: 50%; }
-  &__role { margin: 0 0 .15rem; }
-  &__date { margin: 0 0 .35rem; color: var(--muted); }
-  &__bullets { margin: 0; padding-left: 1rem; }
+  max-width: 900px;      /* ограничим ширину */
+  margin-inline: auto;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  /* вертикальная линия */
+  &::before {
+    content: "";
+    position: absolute;
+    left: 84px;            /* расстояние от левого края до линии */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background:
+      linear-gradient(180deg,
+        rgba(138,99,255,.0) 0%,
+        rgba(138,99,255,.45) 12%,
+        rgba(138,99,255,.45) 88%,
+        rgba(138,99,255,.0) 100%);
+    box-shadow:
+      0 0 0 1px rgba(138,99,255,.06) inset,
+      0 10px 30px rgba(138,99,255,.15);
+    filter: drop-shadow(0 8px 22px rgba(138,99,255,.25));
+    pointer-events: none;
+  }
+}
+
+/* элемент таймлайна */
+.timeline__item {
+  position: relative;
+  display: block;
+  padding-left: 120px;     /* место под линию + маркер */
+  margin-bottom: clamp(18px, 3.5vw, 28px);
+}
+
+/* круглые узлы возле линии */
+.timeline__item::before,
+.timeline__item::after {
+  content: "";
+  position: absolute;
+  left: 74px;              /* выровнять относительно .timeline::before (84px - радиус) */
+  top: 36px;               /* центр относительно карточки; можно подправить */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+.timeline__item::before {
+  background: radial-gradient(circle at 50% 50%, #cbb6ff 0 45%, #8a63ff 46% 100%);
+  box-shadow:
+    0 0 0 3px rgba(138,99,255,.18),
+    0 6px 22px rgba(138,99,255,.35);
+}
+.timeline__item::after {
+  inset: auto;
+  width: 10px; height: 10px; left: 79px; top: 41px;
+  background: #1b1f29;
+  border: 1px solid rgba(255,255,255,.12);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.14);
+}
+
+/* карточка опыта */
+.exp-card {
+  position: relative;
+  border-radius: 18px;
+  padding: clamp(18px, 2.6vw, 26px);
+  background:
+    radial-gradient(120% 140% at 10% 10%, rgba(138,99,255,.06), transparent 55%),
+    radial-gradient(120% 140% at 90% 30%, rgba(60,194,255,.05), transparent 55%),
+    #161922;
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.04) inset,
+    0 10px 18px rgba(0,0,0,.35),
+    0 20px 50px rgba(10,12,20,.4);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s;
+}
+.exp-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(138,99,255,.18);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,.06) inset,
+    0 16px 26px rgba(0,0,0,.36),
+    0 28px 80px rgba(138,99,255,.25);
+}
+
+/* «пилюля» с датой */
+.exp-card__period {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: #cbb6ff;
+  background: rgba(138,99,255,.12);
+  border: 1px solid rgba(138,99,255,.28);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+/* заголовок/компания */
+.exp-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.exp-card__title {
+  font-size: clamp(18px, 2.1vw, 20px);
+  font-weight: 700;
+  color: #e8e9f2;
+}
+.exp-card__link {
+  display: inline-flex;
+  opacity: .8;
+  transition: opacity .2s;
+}
+.exp-card__link:hover { opacity: 1; }
+
+/* роль */
+.exp-card__role {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255,255,255,.58);
+}
+
+/* описание */
+.exp-card__desc {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(231,234,243,.78);
+}
+
+/* стек / чипсы */
+.exp-card__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.tech-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  padding-inline: 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: #dfe3f3;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 6px 18px rgba(0,0,0,.25);
+}
+.tech-chip--icon {
+  width: 28px; min-width: 28px; padding: 0;
+  border-radius: 50%;
+}
+
+/* Дата работы */
+.work-experience-card__date {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 12%, transparent);
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+/* Название компании */
+.work-experience-card__title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.work-experience-card__link {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+/* Должность */
+.work-experience-card__position {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+/* Описание */
+.work-experience-card__description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--muted);
+  margin-bottom: 1rem;
+
+  p {
+    margin: 0;
+  }
+}
+
+/* Технологический стек */
+.stack {
+  margin-top: auto; /* чтобы стек был внизу, если карточка растянута */
+}
+
+.stack__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stack__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(140, 82, 255, 0.3) inset;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(140, 82, 255, 0.8),
+                0 0 20px rgba(140, 82, 255, 0.6) inset;
+    transform: scale(1.05);
+  }
+}
+
+.stack__image {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+
+/* адаптив — на больших ширинах немного плотнее */
+@media (min-width: 860px) {
+  .timeline__item { margin-bottom: 32px; }
+}
+
+/* prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .exp-card { transition: none; }
+  .exp-card:hover { transform: none; }
 }

@@ -10,13 +10,15 @@
   --container: 1100px;
 }
 [data-theme="dark"] {
-  --bg: #0b1020;
+  --bg: #191820;
   --text: #e5e7eb;
   --muted: #a3a3a3;
   --primary: #60a5fa;
-  --surface: #0f172a;
-  --border: #1f2937;
+  --surface: #191820;
+  --border: #191820;
   --shadow: 0 2px 20px rgba(0,0,0,.35);
 }
+
+
 $bp-desktop: 1200px;
 $bp-tablet: 768px;

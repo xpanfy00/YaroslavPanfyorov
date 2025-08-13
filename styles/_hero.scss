@@ -1,6 +1,29 @@
 .hero {
-  padding: 72px 0; background: linear-gradient(180deg, transparent 0%, var(--surface) 100%);
-  &__title { font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 .5rem; }
-  &__subtitle { color: var(--muted); margin: 0 0 1.25rem; }
-  &__cta { display: flex; gap: .75rem; flex-wrap: wrap; }
+  padding-top: var(--header-height, 25px); // можно завести переменную
+}
+.hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.hero__content {
+  flex: 1;
+}
+
+.hero__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero__image img {
+  max-width: 100%;
+  height: auto;
 }

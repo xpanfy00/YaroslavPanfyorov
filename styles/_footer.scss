@@ -1,6 +1,89 @@
 .footer {
-  margin-top: 48px; border-top: 1px solid var(--border); padding: 32px 0; background: var(--surface);
-  &__inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  margin-top: 64px;
+  border-top: 0;
+  background: transparent;
+  margin-bottom: 40px; // отступ снизу
+
+  &__card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px 28px;
+    align-items: center;
+    padding: clamp(18px, 3.2vw, 28px);
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: 0 10px 26px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+    border: 1px solid var(--border);
+  }
+
+  &__title {
+    margin: 0 0 6px;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: clamp(22px, 3.2vw, 32px);
+    color: var(--text);
+  }
+
+  &__accent {
+    background: linear-gradient(90deg, var(--primary), #8a6cff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__note {
+    margin: 0;
+    font-size: .9rem;
+    color: var(--muted);
+  }
+
+  &__socials {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  .socbtn {
+    --ring: 0 0 0 0 rgba(138,108,255,.0);
+    inline-size: 42px;
+    block-size: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.04);
+    color: rgba(255,255,255,.9);
+    box-shadow: var(--ring);
+    transition: transform .2s ease, box-shadow .25s ease, background .25s ease, color .25s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: rgba(138,108,255,.12);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow:
+        0 0 0 2px rgba(138,108,255,.25),
+        0 8px 18px rgba(0,0,0,.35);
+      outline: none;
+    }
+  }
+
+  &__copy {
+    grid-column: 1 / -1;
+    margin-left: auto;
+    font-size: .85rem;
+    color: var(--muted);
+  }
 }
-.contact-list { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; flex-wrap: wrap; }
-.footer__links { list-style: none; margin: 8px 0 0; padding: 0; display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Адаптив: на узких экранах соц-кнопки вниз */
+@media (max-width: 640px) {
+  .footer__card {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .footer__copy { margin-left: 0; }
+}
