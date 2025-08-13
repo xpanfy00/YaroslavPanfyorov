@@ -170,3 +170,52 @@ revealEls.forEach(el => rio.observe(el));
   });
 })();
 
+
+(() => {
+  const NAMESPACE = 'xpanfy00.github.io/YaroslavPanfyorov/';
+  const today = new Date();
+  const ymd = today.toISOString().slice(0, 10); // YYYY-MM-DD
+  const LS_KEY = 'daily-visit-counted-' + ymd;
+
+  // Считаем 1 раз в сутки на этот браузер
+  if (!localStorage.getItem(LS_KEY)) {
+    const key = 'visits-' + ymd;
+    const url = `https://api.countapi.xyz/hit/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(key)}`;
+
+    fetch(url, { mode: 'cors', cache: 'no-store' })
+      .then(r => r.json())
+      .then(data => {
+        console.log(`[Stats] ${ymd}:`, data?.value);
+      })
+      .catch(err => console.warn('[Stats] error:', err));
+
+    localStorage.setItem(LS_KEY, '1');
+  }
+})();
+
+(async () => {
+  const NAMESPACE = 'xpanfy00.github.io/YaroslavPanfyorov/'; // тот же, что выше
+  const ul = document.getElementById('daily-stats');
+  if (!ul) return;
+
+  const today = new Date();
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(today);
+    d.setDate(today.getDate() - i);
+    const ymd = d.toISOString().slice(0, 10);
+    const key = 'visits-' + ymd;
+    const url = `https://api.countapi.xyz/get/${encodeURIComponent(NAMESPACE)}/${encodeURIComponent(key)}`;
+
+    try {
+      const r = await fetch(url, { cache: 'no-store' });
+      const json = await r.json();
+      const count = json?.value ?? 0;
+      const li = document.createElement('li');
+      li.textContent = `${ymd}: ${count}`;
+      ul.appendChild(li);
+    } catch (e) {
+      console.warn('[Stats] fetch day failed:', ymd, e);
+    }
+  }
+})();
+
